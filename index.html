@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nymii's website !</title>
+    <meta
+      name="description"
+      content="Personal website of nymii: pink world and pixel art."
+    />
+    <meta property="og:title" content="Nymii's website !" />
+    <meta property="og:description" content="Personal website of nymii: pink world and pixel art." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="preview.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Nymii's website !" />
+    <meta name="twitter:description" content="Personal website of nymii: pink world and pixel art." />
+    <meta name="twitter:image" content="preview.png" />
+    <link rel="icon" href="pfp.png" />
+    <link rel="apple-touch-icon" href="pfp.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="bg-orb orb-1"></div>
+    <div class="bg-orb orb-2"></div>
+    <div class="pixel-stars" aria-hidden="true"></div>
+    <div class="grid-overlay" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <a href="#" class="brand">
+        <span class="brand-paw">=^.^=</span>
+        <span>nymii.dev</span>
+      </a>
+      <nav class="nav-links">
+        <a href="#likes">Likes</a>
+  		<a href="#projects">Git</a>
+		<a href="https://blog.nymii.dev/">Blog</a>
+      </nav>
+      <button class="menu-btn" aria-label="Open menu">☰</button>
+    </header>
+
+    <main>
+      <section class="hero reveal" id="top">
+        <div class="hero-layout">
+          <div class="hero-media">
+            <img class="pfp" src="pfp.png" alt="Profile photo of Charlotte, also known as nymii" />
+          </div>
+          <div class="hero-copy-wrap">
+            <p class="eyebrow">little pink corner on the internet</p>
+            <h1>nymii <span class="alt-name">(Charlotte)</span></h1>
+            <p class="hero-copy">
+              Hi! I am Charlotte. I am 20, I study cybersecurity, and I am
+              building AuriOS, a kernel and operating system project. I have been coding
+              since I was little, and I love creating things from scratch.
+            </p>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="#likes">explore</a>
+              <a class="btn btn-ghost" href="https://github.com/im-nymii">github</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="portfolio" id="likes">
+        <h2 class="section-title reveal">Likes</h2>
+        <div class="portfolio-grid">
+          <article class="shot reveal">
+            <span class="tag">coding</span>
+            <h3>open-source</h3>
+            <p>I code in my free time and share open-source projects so they can be useful to anyone.</p>
+          </article>
+          <article class="shot reveal">
+            <span class="tag">music</span>
+            <h3>lo-fi / games ost</h3>
+            <p>Background playlists for coding, drawing, and journaling sessions.</p>
+          </article>
+          <article class="shot reveal">
+            <span class="tag">cute stuff</span>
+            <h3>plushies + stickers</h3>
+            <p>A collection of tiny cute things all around my room.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="portfolio" id="projects">
+        <h2 class="section-title reveal">Git projects</h2>
+        <div class="portfolio-grid">
+          <a class="shot reveal project-card repo-card" href="https://github.com/auri-os/aurios" target="_blank" rel="noreferrer">
+            <h3>AuriOS</h3>
+            <span class="tag">low level</span>
+            <p>A kernel and operating system project focused on privacy and building from scratch.</p>
+          </a>
+          <a class="shot reveal project-card repo-card" href="https://github.com/im-nymii/gros-yeux-datacenter-manager" target="_blank" rel="noreferrer">
+            <h3>Gros'Yeux</h3>
+            <span class="tag">network management</span>
+            <p>A mini datacenter dashboard for managing my server room.</p>
+          </a>
+          <a class="shot reveal project-card repo-card" href="https://github.com/im-nymii" target="_blank" rel="noreferrer">
+            <h3>GitHub</h3>
+            <span class="tag">profile</span>
+            <p>My profile, activity, and contribution history live here.</p>
+          </a>
+        </div>
+        <figure class="commit-graph reveal">
+          <img
+            src="https://ghchart.rshah.org/im-nymii"
+            alt="GitHub contribution graph for im-nymii"
+          />
+          <figcaption>GitHub commit graph for im-nymii</figcaption>
+        </figure>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>© 2026 nymii - tiny pixel home.</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
