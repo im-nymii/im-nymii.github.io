@@ -1,61 +1,22 @@
 (() => {
-  const boot = document.getElementById('boot');
-  const log = document.getElementById('boot-log');
-  if (!boot || !log) return;
+  const field = document.querySelector('.confetti');
+  if (!field) return;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
-  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const seen = sessionStorage.getItem('booted');
+  const suits = ['✦', '◆', '♦', '♠', '♥', '♣'];
+  const count = window.innerWidth < 720 ? 10 : 18;
 
-  if (seen || reduced) {
-    boot.parentNode.removeChild(boot);
-    return;
+  for (let i = 0; i < count; i++) {
+    const s = document.createElement('span');
+    s.textContent = suits[Math.floor(Math.random() * suits.length)];
+    s.style.left = `${Math.random() * 100}%`;
+    s.style.fontSize = `${14 + Math.random() * 22}px`;
+    const dur = 12 + Math.random() * 16;
+    s.style.animationDuration = `${dur}s`;
+    s.style.animationDelay = `${-Math.random() * dur}s`;
+    s.style.opacity = (0.3 + Math.random() * 0.4).toFixed(2);
+    field.appendChild(s);
   }
-
-  const lines = [
-    ['dim',  '> init nymii.sys'],
-    ['',     'POST .............................. <span class="ok">[ ok ]</span>'],
-    ['',     'loading kernel modules ............ <span class="ok">[ ok ]</span>'],
-    ['',     'mounting /dev/identity ............ <span class="ok">[ ok ]</span>'],
-    ['',     'checking memory integrity ......... <span class="ok">[ ok ]</span>'],
-    ['',     'bringing up loopback .............. <span class="ok">[ ok ]</span>'],
-    ['',     'establishing uplink ............... <span class="ok">[ ok ]</span>'],
-    ['',     'negotiating tls handshake ......... <span class="ok">[ ok ]</span>'],
-    ['warn', 'scanning for trace... aborted ..... <span class="warn">[skip]</span>'],
-    ['warn', 'decrypting profile ................ <span class="ok">[ ok ]</span>'],
-
-    ['',     'loading projects .................. <span class="ok">[ ok ]</span>'],
-    ['',     'loading memories .................. <span class="ok">[ ok ]</span>'],
-    ['',     'mounting /home/nymii .............. <span class="ok">[ ok ]</span>'],
-    ['',     'starting display server ........... <span class="ok">[ ok ]</span>'],
-    ['',     'spawning interface ................ <span class="ok">[ ok ]</span>'],
-    ['dim',  '> all systems nominal'],
-    ['dim',  '> user authenticated: nymii'],
-    ['dim',  '> welcome nymii.'],
-  ];
-
-  document.body.style.overflow = 'hidden';
-  let html = '';
-  let i = 0;
-
-  const typeLine = () => {
-    if (i >= lines.length) {
-      log.innerHTML = html + '<span class="cur">_</span>';
-      setTimeout(() => {
-        boot.classList.add('boot-done');
-        document.body.style.overflow = '';
-        sessionStorage.setItem('booted', '1');
-        setTimeout(() => boot.parentNode && boot.parentNode.removeChild(boot), 800);
-      }, 420);
-      return;
-    }
-    const [cls, text] = lines[i];
-    html += `<span class="${cls}">${text}</span>\n`;
-    log.innerHTML = html + '<span class="cur">_</span>';
-    i += 1;
-    setTimeout(typeLine, 75 + Math.random() * 110);
-  };
-
-  typeLine();
 })();
 
 const toggle = document.querySelector('.nav-toggle');
@@ -82,51 +43,10 @@ const io = new IntersectionObserver(
 );
 reveal.forEach((el) => {
   el.style.opacity = '0';
-  el.style.transform = 'translateY(20px)';
-  el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+  el.style.transform = 'translateY(24px)';
+  el.style.transition = 'opacity 0.55s ease, transform 0.55s cubic-bezier(.2,1.2,.3,1)';
   io.observe(el);
 });
-
-const name = document.querySelector('.name');
-if (name) {
-  setInterval(() => {
-    if (Math.random() > 0.72) {
-      const x = (Math.random() * 5 - 2.5).toFixed(1);
-      const sk = (Math.random() * 1.6 - 0.8).toFixed(2);
-      name.style.transform = `translate(${x}px,0) skewX(${sk}deg)`;
-      name.style.filter = 'blur(0.4px)';
-      setTimeout(() => {
-        name.style.transform = 'translate(0,0)';
-        name.style.filter = 'none';
-      }, 90);
-    }
-  }, 2400);
-}
-
-const glitchTargets = document.querySelectorAll('.block-head h2, .chip, .logo');
-if (glitchTargets.length) {
-  setInterval(() => {
-    const el = glitchTargets[Math.floor(Math.random() * glitchTargets.length)];
-    const x = (Math.random() * 4 - 2).toFixed(1);
-    el.style.transition = 'none';
-    el.style.transform = `translate(${x}px,0)`;
-    el.style.textShadow = '-1px 0 rgba(139,108,255,0.6), 1px 0 rgba(108,160,255,0.5)';
-    setTimeout(() => {
-      el.style.transform = '';
-      el.style.textShadow = '';
-    }, 70);
-  }, 3600);
-}
-
-const tag = document.querySelector('.ascii-tag');
-if (tag) {
-  const base = tag.textContent.replace(/_$/, '');
-  let on = true;
-  setInterval(() => {
-    tag.textContent = base + (on ? '_' : ' ');
-    on = !on;
-  }, 530);
-}
 
 const postCard = document.getElementById('post-card');
 if (postCard) {
@@ -167,7 +87,7 @@ if (postCard) {
       }
       const tagsEl = postCard.querySelector('[data-post="tags"]');
       if (tagsEl && tags.length) {
-        tagsEl.innerHTML = tags.map((t) => `<span></span>`).join('');
+        tagsEl.innerHTML = tags.map(() => `<span></span>`).join('');
         tagsEl.querySelectorAll('span').forEach((s, i) => (s.textContent = tags[i]));
       }
     })
