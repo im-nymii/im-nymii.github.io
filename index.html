@@ -3,42 +3,34 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>nymii</title>
-    <meta name="description" content="nymii — cybersecurity, kernel dev, open-source. portfolio." />
-    <meta property="og:title" content="nymii" />
-    <meta property="og:description" content="cybersecurity / kernel dev / open-source" />
+    <title>nymii ✦ chaos, chaos!</title>
+    <meta name="description" content="nymii — charlotte. cybersecurity, kernel dev & open-source, with a little chaos on the side." />
+    <meta property="og:title" content="nymii ✦" />
+    <meta property="og:description" content="cybersecurity / kernel dev / open-source — chaos, chaos!" />
     <meta property="og:type" content="website" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="nymii" />
-    <meta name="twitter:description" content="cybersecurity / kernel dev / open-source" />
+    <meta name="twitter:title" content="nymii ✦" />
+    <meta name="twitter:description" content="cybersecurity / kernel dev / open-source — chaos, chaos!" />
     <meta name="twitter:image" content="preview.png" />
     <link rel="icon" href="https://github.com/im-nymii.png" />
     <link rel="apple-touch-icon" href="pfp.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Major+Mono+Display&family=Space+Mono:wght@400;700&family=VT323&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Fredoka:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <div class="boot" id="boot" aria-hidden="true">
-      <pre class="boot-log" id="boot-log"></pre>
-    </div>
-
-    <div class="fx fx-dither" aria-hidden="true"></div>
-    <div class="fx fx-grain" aria-hidden="true"></div>
-    <div class="fx fx-scanlines" aria-hidden="true"></div>
-    <div class="fx fx-rgb" aria-hidden="true"></div>
-    <div class="fx fx-flicker" aria-hidden="true"></div>
-    <div class="fx fx-glitchbar" aria-hidden="true"></div>
-    <div class="fx fx-vignette" aria-hidden="true"></div>
+    <!-- floating chaos diamonds -->
+    <div class="confetti" aria-hidden="true"></div>
 
     <header class="topbar">
       <a class="logo" href="#top">
-        <span class="logo-mark">[</span>nymii<span class="logo-mark">]</span>
-        <span class="logo-blip"></span>
+        <span class="logo-suit">✦</span>
+        <span class="logo-text">nymii</span>
+        <span class="logo-suit">✦</span>
       </a>
       <nav class="nav">
         <a href="#about">about</a>
@@ -47,7 +39,7 @@
         <a href="#net">interests</a>
         <a class="nav-cta" href="https://github.com/im-nymii">github ↗</a>
       </nav>
-      <button class="nav-toggle" aria-label="menu">≡</button>
+      <button class="nav-toggle" aria-label="menu">☰</button>
     </header>
 
     <div class="nav-drawer" id="drawer">
@@ -62,27 +54,22 @@
       <section class="hero">
         <div class="hero-left">
           <figure class="pf">
+            <div class="pf-ring" aria-hidden="true"></div>
             <img class="pf-img" src="https://github.com/im-nymii.png" alt="nymii" />
-            <span class="pf-dither" aria-hidden="true"></span>
-            <span class="pf-frame" aria-hidden="true"></span>
+            <span class="pf-bell pf-bell--a" aria-hidden="true">✦</span>
+            <span class="pf-bell pf-bell--b" aria-hidden="true">◆</span>
           </figure>
-          <pre class="ascii-tag" aria-hidden="true">
- nymii@n0twired:~$ whoami
- &gt; nymii_</pre>
         </div>
 
         <div class="hero-right">
-          <p class="kicker">// pwning memories</p>
-          <pre class="name" role="heading" aria-level="1" aria-label="nymii">                _ _ 
- _ _ _  _ _ __ (_|_)
-| ' \ || | '  \| | |
-|_||_\_, |_|_|_|_|_|
-     |__/           </pre>
-          <p class="role">charlotte&nbsp;&nbsp;·&nbsp;&nbsp;20&nbsp;&nbsp;·&nbsp;&nbsp;cybersecurity / kernel dev</p>
+          <p class="kicker">✦ chaos, chaos! ✦</p>
+          <h1 class="name" aria-label="nymii">nymii</h1>
+          <p class="role">charlotte&nbsp;·&nbsp;20&nbsp;·&nbsp;cybersecurity / kernel dev</p>
           <p class="lede">
-            i build things from the ground up. currently writing
-            <span class="hl">AuriOS</span>, a kernel &amp; operating system focused
-            on privacy. low-level, open-source, made from scratch.
+            i build things from the ground up with a little bit of mischief.
+            currently working on <span class="hl">AuriOS</span>, a kernel &amp;
+            operating system focused on privacy. low-level, open-source, made
+            entirely from scratch.
           </p>
           <div class="hero-actions">
             <a class="btn" href="#work">view work</a>
@@ -103,15 +90,16 @@
 
       <section class="block" id="about">
         <div class="block-head">
-          <span class="block-no">Layer 01</span>
+          <span class="block-suit">♦</span>
           <h2>about</h2>
           <span class="block-rule"></span>
         </div>
-        <div class="about-grid">
+        <div class="card about-grid">
           <p class="about-lead">
             i'm charlotte, i go by <span class="hl">nymii</span>. i've been coding
             since i was a kid and i love understanding how machines work at the
-            lowest level. security, systems, and software built from nothing.
+            lowest level. security, systems, and software built from nothing
+            with a grin the whole way through.
           </p>
           <ul class="facts">
             <li><span>focus</span> cybersecurity · os dev</li>
@@ -125,13 +113,13 @@
 
       <section class="block" id="work">
         <div class="block-head">
-          <span class="block-no">Layer 02</span>
+          <span class="block-suit">♠</span>
           <h2>work</h2>
           <span class="block-rule"></span>
         </div>
         <div class="work-list">
-          <a class="work" href="https://github.com/auri-os/aurios" target="_blank" rel="noreferrer">
-            <span class="work-idx">00</span>
+          <a class="work card" href="https://github.com/auri-os/aurios" target="_blank" rel="noreferrer">
+            <span class="work-idx">♦</span>
             <span class="work-body">
               <span class="work-name">AuriOS</span>
               <span class="work-desc">a kernel &amp; operating system, privacy-focused, built from scratch.</span>
@@ -139,8 +127,8 @@
             <span class="work-tag">os / kernel</span>
             <span class="work-go">↗</span>
           </a>
-          <a class="work" href="https://github.com/im-nymii/gros-yeux-datacenter-manager" target="_blank" rel="noreferrer">
-            <span class="work-idx">01</span>
+          <a class="work card" href="https://github.com/im-nymii/gros-yeux-datacenter-manager" target="_blank" rel="noreferrer">
+            <span class="work-idx">♣</span>
             <span class="work-body">
               <span class="work-name">Gros'Yeux</span>
               <span class="work-desc">a datacenter dashboard for server &amp; network monitoring.</span>
@@ -148,8 +136,8 @@
             <span class="work-tag">infra / web</span>
             <span class="work-go">↗</span>
           </a>
-          <a class="work" href="https://github.com/im-nymii" target="_blank" rel="noreferrer">
-            <span class="work-idx">02</span>
+          <a class="work card" href="https://github.com/im-nymii" target="_blank" rel="noreferrer">
+            <span class="work-idx">♥</span>
             <span class="work-body">
               <span class="work-name">GitHub</span>
               <span class="work-desc">profile, experiments &amp; contribution history.</span>
@@ -162,25 +150,25 @@
 
       <section class="block" id="blog">
         <div class="block-head">
-          <span class="block-no">Layer 03</span>
+          <span class="block-suit">♥</span>
           <h2>latest post</h2>
           <span class="block-rule"></span>
           <a class="block-link" href="https://nymii.dev/blog" target="_blank" rel="noreferrer">all posts ↗</a>
         </div>
-        <a class="post" id="post-card" href="https://nymii.dev/blog" target="_blank" rel="noreferrer">
+        <a class="post card" id="post-card" href="https://nymii.dev/blog" target="_blank" rel="noreferrer">
           <span class="post-meta">
             <span class="post-date" data-post="date">——</span>
             <span class="post-tags" data-post="tags"></span>
           </span>
           <span class="post-title" data-post="title">loading latest post…</span>
           <span class="post-sum" data-post="summary"></span>
-          <span class="post-go">read &gt;</span>
+          <span class="post-go">read ›</span>
         </a>
       </section>
 
       <section class="block" id="net">
         <div class="block-head">
-          <span class="block-no">Layer 04</span>
+          <span class="block-suit">♣</span>
           <h2>interests</h2>
           <span class="block-rule"></span>
         </div>
@@ -190,7 +178,7 @@
           <span class="chip">networks</span>
           <span class="chip">open-source</span>
           <span class="chip">hacking</span>
-          <span class="chip">retro tech</span>
+          <span class="chip">modding</span>
         </div>
       </section>
     </main>
@@ -203,11 +191,11 @@
         <a href="https://app.hackthebox.com/users/1915684">hackthebox</a>
         <a href="https://www.linkedin.com/in/s-charlotte/">linkedin</a>
         <a href="https://www.youtube.com/@nymii_dev">youtube</a>
-        <a href="https://www.twitch.tv/im_nymii">twitch</a>
+        <a href="https://www.twitch.tv/laminicharlotte">twitch</a>
         <a href="https://x.com/nymii_">twitter</a>
         <a href="https://discord.com/users/953256335854678067">discord</a>
       </div>
-      <p class="foot-sign">&gt; When I realized that, I was no longer afraid... <span class="dim">— </span></p>
+      <p class="foot-sign">✦ do you know the world revolving? ✦</p>
     </footer>
 
     <script src="script.js"></script>
